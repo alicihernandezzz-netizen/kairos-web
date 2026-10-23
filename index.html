@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+</head>
+<body>
+<title>Kairo's Links</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Kairo's Intelligence Agency: agentes de IA, webs, CRMs y stands NFC de reseñas Google para negocios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: one centred column on the brand's slate ground — identity, a short promise, then the links as full-width rows. */
+:root {
+  --bg: #1C2930;
+  --surface: #23333B;
+  --surface-hover: #2A3D46;
+  --ink: #F4F5F2;
+  --muted: #A9B7BB;
+  --line: #34474F;
+  --accent: #2F8278;
+  --accent-bright: #45A597;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(120% 60% at 50% -10%, rgba(47,130,120,.28), transparent 60%),
+    var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.page {
+  max-width: 460px; margin: 0 auto; display: grid; gap: 28px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 48px 40px;
+}
+.id { display: grid; justify-items: center; gap: 14px; text-align: center; }
+/* Logo slot: replace the inner <span> with the eagle logo (<img src="aguila.svg" alt="Kairo's">) when it is ready. */
+.mark {
+  width: 96px; height: 96px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--ink); color: var(--bg);
+  box-shadow: 0 0 0 6px rgba(47,130,120,.35);
+  overflow: hidden;
+}
+.mark span { font-family: var(--font-display); font-variation-settings: "wdth" 125; font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -.02em; }
+.mark img { width: 100%; height: 100%; object-fit: cover; }
+h1 {
+  margin: 0; font-family: var(--font-display); font-weight: 800;
+  font-variation-settings: "wdth" 125; font-size: 34px; line-height: 1; letter-spacing: .01em; text-transform: uppercase;
+}
+.sub { margin: -4px 0 0; color: var(--accent-bright); font-size: 12px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; }
+.promise { margin: 4px 0 0; color: var(--muted); max-width: 34ch; text-wrap: balance; }
+
+.links { display: grid; gap: 12px; }
+.link {
+  display: grid; grid-template-columns: 44px minmax(0,1fr) 20px; align-items: center; gap: 14px;
+  padding: 14px 16px; border-radius: 14px; text-decoration: none; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line);
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.link:hover { background: var(--surface-hover); border-color: var(--accent); transform: translateY(-1px); }
+.link:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; }
+.link.primary { background: var(--accent); border-color: var(--accent); }
+.link.primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); }
+.link .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(244,245,242,.08); }
+.link.primary .ico { background: rgba(28,41,48,.22); }
+.link svg { width: 22px; height: 22px; }
+.link .txt { min-width: 0; display: grid; gap: 2px; }
+.link b { font-weight: 600; font-size: 15.5px; line-height: 1.25; }
+.link small { color: var(--muted); font-size: 13px; line-height: 1.3; }
+.link.primary small { color: rgba(244,245,242,.85); }
+.link .arrow { color: var(--muted); }
+.link.primary .arrow { color: var(--ink); }
+
+.social { display: flex; justify-content: center; gap: 12px; }
+.social a {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 99px;
+  border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 500;
+}
+.social a:hover { border-color: var(--accent); }
+.social a:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; }
+.social svg { width: 16px; height: 16px; }
+footer { text-align: center; color: var(--muted); font-size: 13px; }
+
+@media (prefers-reduced-motion: reduce) { .link { transition: none; } .link:hover { transform: none; } }
+</style>
+
+<main class="page">
+  <section class="id">
+    <div class="mark" aria-hidden="true"><span>K</span></div>
+    <h1>Kairo's</h1>
+    <p class="sub">Intelligence Agency</p>
+    <p class="promise">Agentes de IA que atienden tus llamadas, webs, CRMs y stands NFC para conseguir reseñas en Google.</p>
+  </section>
+
+  <nav class="links" aria-label="Enlaces de Kairo's">
+    <!-- WhatsApp de Jose: +34 641 19 60 65. El texto tras ?text= es el mensaje que aparece ya escrito. -->
+    <a class="link primary" href="https://wa.me/34641196065?text=Hola%2C%20quer%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20Kairo%27s" target="_blank" rel="noopener">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1.1-4A8 8 0 1 1 20 12z"/><path d="M9 9.5c.3 1.8 2 3.6 3.8 4.2l1.2-1.1 1.8.8-.3 1.3c-3.4.4-7-3.1-6.8-6.5L10 8l.8 1.8z"/></svg></span>
+      <span class="txt"><b>Escríbenos por WhatsApp</b><small>Te respondemos nosotros, Jose y Alicia</small></span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a class="link" href="https://wa.me/34641196065?text=Hola%2C%20quer%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20acerca%20del%20agente%20de%20voz%20con%20IA" target="_blank" rel="noopener">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/><path d="M15 3a6 6 0 0 1 6 6M15 7a2 2 0 0 1 2 2"/></svg></span>
+      <span class="txt"><b>Prueba nuestro agente de voz IA</b><small>Atiende llamadas y reservas 24/7</small></span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a class="link" href="stands-nfc.html">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="11" height="18" rx="2"/><path d="M19 9a4 4 0 0 1 0 6M21.5 7a7 7 0 0 1 0 10"/></svg></span>
+      <span class="txt"><b>Stands NFC de reseñas Google</b><small>Acercan el móvil y te dejan la reseña</small></span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a class="link" href="reventa.html">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18l-2 11H5z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><path d="M9 12h6"/></svg></span>
+      <span class="txt"><b>¿Quieres revender?</b><small>Sin pedido mínimo, a precio de revendedor</small></span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a class="link" href="https://tudominio.com" target="_blank" rel="noopener">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg></span>
+      <span class="txt"><b>Nuestra web</b><small>Webs y CRMs a medida para negocios</small></span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </nav>
+
+  <div class="social">
+    <a href="https://www.tiktok.com/@joseyalicia" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.5 3c.3 2.2 1.8 3.8 4 4v3a7.4 7.4 0 0 1-4-1.3V15a6 6 0 1 1-6-6v3.1a3 3 0 1 0 3 2.9V3z"/></svg>
+      TikTok
+    </a>
+    <!-- EDITAR: vuestro usuario de Instagram -->
+    <a href="https://www.instagram.com/kairos.agency" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </a>
+  </div>
+
+  <footer>Kairo's Intelligence Agency · Hecha por nosotros, como las webs de nuestros clientes</footer>
+</main>
+
+</body>
+</html>
