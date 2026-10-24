@@ -36,7 +36,7 @@ a { color: inherit; }
 /* Barra superior */
 .barra { border-bottom: 1px solid var(--linea); }
 .barra .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 16px; }
-.marca { font-family: var(--fuente-titulos); font-variation-settings: "wdth" 125; font-weight: 800; font-size: 20px; letter-spacing: .02em; text-transform: uppercase; text-decoration: none; }
+.marca { display: inline-flex; align-items: center; gap: 10px; font-family: var(--fuente-titulos); font-variation-settings: "wdth" 125; font-weight: 800; font-size: 20px; letter-spacing: .02em; text-transform: uppercase; text-decoration: none; }
 .volver { font-size: 14px; color: var(--gris); text-decoration: none; }
 .volver:hover { color: var(--texto); }
 
