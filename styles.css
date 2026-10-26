@@ -1,18 +1,20 @@
 /* Estilos compartidos de las páginas de Kairo's (stands-nfc.html y reventa.html).
    Para cambiar un color en todas las páginas a la vez, cámbialo solo aquí arriba. */
 :root {
-  --fondo: #1C2930;        /* azul pizarra de la marca */
-  --fondo-claro: #F4F5F2;  /* blanco roto de la marca */
-  --tarjeta: #23333B;
-  --texto: #F4F5F2;
-  --texto-oscuro: #1C2930;
-  --gris: #A9B7BB;
-  --gris-oscuro: #5B6A70;
-  --linea: #34474F;
-  --acento: #2F8278;       /* verde azulado de la marca */
-  --acento-claro: #45A597;
-  --fuente-titulos: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --fuente-texto: "Figtree", "Segoe UI", system-ui, sans-serif;
+  /* Paleta oficial de Kairos: los colores del isotipo del águila */
+  --fondo: #070D11;        /* fondo casi negro */
+  --fondo-claro: #F4F8FA;  /* blanco suave para secciones claras */
+  --tarjeta: #0B151B;      /* superficies */
+  --texto: #F4F8FA;
+  --texto-oscuro: #070D11;
+  --gris: #9CB0BA;
+  --gris-oscuro: #4E6470;
+  --linea: #1B2C35;
+  --acento: #2DD4BF;       /* turquesa del águila */
+  --acento-claro: #38BDF8; /* cian del ojo */
+  --acento-oscuro: #0F8F80; /* turquesa legible sobre fondo claro */
+  --fuente-titulos: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --fuente-texto: "Montserrat", "Segoe UI", system-ui, sans-serif;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -41,7 +43,7 @@ a { color: inherit; }
 .volver:hover { color: var(--texto); }
 
 /* Portada de la página */
-.portada { padding-block: 56px 64px; background: radial-gradient(90% 70% at 85% 10%, rgba(47,130,120,.28), transparent 60%); }
+.portada { padding-block: 56px 64px; background: radial-gradient(90% 70% at 85% 10%, rgba(45,212,191,.14), transparent 60%); }
 .portada .contenedor { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
 .etiqueta { display: inline-block; font-size: 12.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--acento-claro); margin-bottom: 14px; }
 h1 { font-family: var(--fuente-titulos); font-weight: 800; font-size: clamp(34px, 5.4vw, 56px); line-height: 1.04; margin: 0 0 18px; letter-spacing: -.015em; text-wrap: balance; }
@@ -52,9 +54,9 @@ h3 { font-family: var(--fuente-titulos); font-weight: 700; font-size: 19px; line
 
 /* Botones */
 .botones { display: flex; flex-wrap: wrap; gap: 12px; }
-.boton { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 12px; font-weight: 600; text-decoration: none; background: var(--acento); color: var(--texto); border: 1px solid var(--acento); transition: background .2s ease; }
-.boton:hover { background: var(--acento-claro); border-color: var(--acento-claro); }
-.boton.secundario { background: transparent; border-color: var(--linea); }
+.boton { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 12px; font-weight: 600; text-decoration: none; background: var(--acento); color: var(--texto-oscuro); border: 1px solid var(--acento); transition: background .2s ease; }
+.boton:hover { background: #5EE3D1; border-color: #5EE3D1; }
+.boton.secundario { background: transparent; border-color: var(--linea); color: var(--texto); }
 .boton.secundario:hover { border-color: var(--acento); background: transparent; }
 .boton:focus-visible, .volver:focus-visible, .marca:focus-visible { outline: 2px solid var(--acento-claro); outline-offset: 3px; }
 
@@ -66,15 +68,15 @@ h3 { font-family: var(--fuente-titulos); font-weight: 700; font-size: 19px; line
 .gris { color: var(--gris); }
 
 .pasos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.paso { padding: 24px; border-radius: 16px; background: #FFFFFF; border: 1px solid #DDE2DE; }
-.paso .num { font-family: var(--fuente-titulos); font-weight: 800; font-size: 15px; color: var(--acento); margin-bottom: 10px; display: block; letter-spacing: .08em; }
+.paso { padding: 24px; border-radius: 16px; background: #FFFFFF; border: 1px solid #DCE5E9; }
+.paso .num { font-family: var(--fuente-titulos); font-weight: 800; font-size: 15px; color: var(--acento-oscuro); margin-bottom: 10px; display: block; letter-spacing: .08em; }
 .paso p { margin: 0; color: var(--gris-oscuro); }
 
 .dos-columnas { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
 .dos-columnas img { border-radius: 18px; aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
 .lista { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
 .lista li { display: grid; grid-template-columns: 28px minmax(0,1fr); gap: 12px; align-items: start; }
-.lista li::before { content: ""; width: 22px; height: 22px; margin-top: 3px; border-radius: 50%; background: var(--acento) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F4F5F2' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center / 14px no-repeat; }
+.lista li::before { content: ""; width: 22px; height: 22px; margin-top: 3px; border-radius: 50%; background: var(--acento) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23070D11' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center / 14px no-repeat; }
 .lista b { display: block; }
 
 .negocios { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -86,7 +88,7 @@ summary { cursor: pointer; font-weight: 600; }
 summary:focus-visible { outline: 2px solid var(--acento-claro); outline-offset: 3px; }
 details p { margin: 10px 0 0; color: var(--gris); }
 
-.llamada { text-align: center; padding-block: 72px; background: radial-gradient(70% 90% at 50% 100%, rgba(47,130,120,.3), transparent 70%); }
+.llamada { text-align: center; padding-block: 72px; background: radial-gradient(70% 90% at 50% 100%, rgba(45,212,191,.16), transparent 70%); }
 .llamada .entradilla { margin-inline: auto; }
 .llamada .botones { justify-content: center; }
 

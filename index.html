@@ -13,20 +13,22 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
 <style>
 /* Layout: one centred column on the brand's slate ground — identity, a short promise, then the links as full-width rows. */
 :root {
-  --bg: #1C2930;
-  --surface: #23333B;
-  --surface-hover: #2A3D46;
-  --ink: #F4F5F2;
-  --muted: #A9B7BB;
-  --line: #34474F;
-  --accent: #2F8278;
-  --accent-bright: #45A597;
-  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  /* Paleta oficial de Kairos (colores del isotipo del águila) */
+  --bg: #070D11;
+  --surface: #0B151B;
+  --surface-hover: #112029;
+  --ink: #F4F8FA;
+  --muted: #9CB0BA;
+  --line: #1B2C35;
+  --accent: #2DD4BF;
+  --accent-bright: #38BDF8;
+  --on-accent: #070D11;
+  --font-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Montserrat", "Segoe UI", system-ui, sans-serif;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -34,7 +36,7 @@ html, body { min-height: 100%; }
 body {
   margin: 0;
   background:
-    radial-gradient(120% 60% at 50% -10%, rgba(47,130,120,.28), transparent 60%),
+    radial-gradient(120% 60% at 50% -10%, rgba(45,212,191,.16), transparent 60%),
     var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
@@ -74,17 +76,17 @@ h1 {
 }
 .link:hover { background: var(--surface-hover); border-color: var(--accent); transform: translateY(-1px); }
 .link:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; }
-.link.primary { background: var(--accent); border-color: var(--accent); }
-.link.primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); }
-.link .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(244,245,242,.08); }
-.link.primary .ico { background: rgba(28,41,48,.22); }
+.link.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.link.primary:hover { background: #5EE3D1; border-color: #5EE3D1; }
+.link .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(244,248,250,.06); color: var(--accent); }
+.link.primary .ico { background: rgba(7,13,17,.14); color: var(--on-accent); }
 .link svg { width: 22px; height: 22px; }
 .link .txt { min-width: 0; display: grid; gap: 2px; }
 .link b { font-weight: 600; font-size: 15.5px; line-height: 1.25; }
 .link small { color: var(--muted); font-size: 13px; line-height: 1.3; }
-.link.primary small { color: rgba(244,245,242,.85); }
+.link.primary small { color: rgba(7,13,17,.75); }
 .link .arrow { color: var(--muted); }
-.link.primary .arrow { color: var(--ink); }
+.link.primary .arrow { color: var(--on-accent); }
 
 .social { display: flex; justify-content: center; gap: 12px; }
 .social a {
