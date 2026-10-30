@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 </head>
 <body>
-<title>Kairo's Links</title>
+<title>Kairos · Enlaces</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Kairo's Intelligence Agency: agentes de IA, webs, CRMs y stands NFC de reseñas Google para negocios.">
+<meta name="description" content="Kairos Intelligence Agency: webs, asistentes de IA y soportes NFC de reseñas Google para negocios.">
 <link rel="icon" type="image/svg+xml" href="img/isotipo-aguila.svg">
 <link rel="icon" type="image/png" sizes="512x512" href="img/favicon-512.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -18,15 +18,15 @@
 /* Layout: one centred column on the brand's slate ground — identity, a short promise, then the links as full-width rows. */
 :root {
   /* Paleta oficial de Kairos (colores del isotipo del águila) */
-  --bg: #070D11;
-  --surface: #0B151B;
-  --surface-hover: #112029;
+  --bg: #000000;
+  --surface: #0A1114;
+  --surface-hover: #111B20;
   --ink: #F4F8FA;
   --muted: #9CB0BA;
-  --line: #1B2C35;
+  --line: rgba(129,230,217,.14);
   --accent: #2DD4BF;
   --accent-bright: #38BDF8;
-  --on-accent: #070D11;
+  --on-accent: #042420;
   --font-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Montserrat", "Segoe UI", system-ui, sans-serif;
   color-scheme: dark;
@@ -36,7 +36,7 @@ html, body { min-height: 100%; }
 body {
   margin: 0;
   background:
-    radial-gradient(120% 60% at 50% -10%, rgba(45,212,191,.16), transparent 60%),
+    radial-gradient(90% 50% at 50% -10%, rgba(45,212,191,.16), transparent 65%), radial-gradient(60% 40% at 0% 40%, rgba(56,189,248,.07), transparent 70%),
     var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
@@ -50,7 +50,7 @@ body {
   padding-block: 48px 40px;
 }
 .id { display: grid; justify-items: center; gap: 14px; text-align: center; }
-/* Logo slot: replace the inner <span> with the eagle logo (<img src="aguila.svg" alt="Kairo's">) when it is ready. */
+/* Círculo con el isotipo del águila */
 .mark {
   width: 96px; height: 96px; border-radius: 50%;
   display: grid; place-items: center;
@@ -62,29 +62,29 @@ body {
 .mark img { width: 74%; height: 74%; object-fit: contain; }
 h1 {
   margin: 0; font-family: var(--font-display); font-weight: 800;
-  font-variation-settings: "wdth" 125; font-size: 34px; line-height: 1; letter-spacing: .01em; text-transform: uppercase;
+  font-size: 34px; line-height: 1; letter-spacing: .06em; text-transform: uppercase;
 }
-.sub { margin: -4px 0 0; color: var(--accent-bright); font-size: 12px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; }
+.sub { margin: -4px 0 0; color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; }
 .promise { margin: 4px 0 0; color: var(--muted); max-width: 34ch; text-wrap: balance; }
 
 .links { display: grid; gap: 12px; }
 .link {
   display: grid; grid-template-columns: 44px minmax(0,1fr) 20px; align-items: center; gap: 14px;
-  padding: 14px 16px; border-radius: 14px; text-decoration: none; color: var(--ink);
+  padding: 16px 18px; border-radius: 20px; text-decoration: none; color: var(--ink); box-shadow: 0 16px 40px rgba(0,0,0,.35);
   background: var(--surface); border: 1px solid var(--line);
   transition: background .2s ease, border-color .2s ease, transform .2s ease;
 }
 .link:hover { background: var(--surface-hover); border-color: var(--accent); transform: translateY(-1px); }
 .link:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; }
-.link.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.link.primary:hover { background: #5EE3D1; border-color: #5EE3D1; }
+.link.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 12px 28px -14px var(--accent); }
+.link.primary:hover { background: #5EEAD4; border-color: #5EEAD4; }
 .link .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(244,248,250,.06); color: var(--accent); }
-.link.primary .ico { background: rgba(7,13,17,.14); color: var(--on-accent); }
+.link.primary .ico { background: rgba(4,36,32,.14); color: var(--on-accent); }
 .link svg { width: 22px; height: 22px; }
 .link .txt { min-width: 0; display: grid; gap: 2px; }
 .link b { font-weight: 600; font-size: 15.5px; line-height: 1.25; }
 .link small { color: var(--muted); font-size: 13px; line-height: 1.3; }
-.link.primary small { color: rgba(7,13,17,.75); }
+.link.primary small { color: rgba(4,36,32,.78); }
 .link .arrow { color: var(--muted); }
 .link.primary .arrow { color: var(--on-accent); }
 
@@ -97,6 +97,7 @@ h1 {
 .social a:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; }
 .social svg { width: 16px; height: 16px; }
 footer { text-align: center; color: var(--muted); font-size: 13px; }
+.grad { background: linear-gradient(100deg,#2DD4BF,#38BDF8); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 600; }
 
 @media (prefers-reduced-motion: reduce) { .link { transition: none; } .link:hover { transform: none; } }
 </style>
@@ -104,14 +105,14 @@ footer { text-align: center; color: var(--muted); font-size: 13px; }
 <main class="page">
   <section class="id">
     <div class="mark"><img src="img/isotipo-aguila.svg" alt="Isotipo de Kairos: águila"></div>
-    <h1>Kairo's</h1>
+    <h1>Kairos</h1>
     <p class="sub">Intelligence Agency</p>
-    <p class="promise">Agentes de IA que atienden tus llamadas, webs, CRMs y stands NFC para conseguir reseñas en Google.</p>
+    <p class="promise">Webs, asistentes de IA y soportes NFC para que <span class="grad">se vea el trabajo de tu negocio.</span></p>
   </section>
 
-  <nav class="links" aria-label="Enlaces de Kairo's">
+  <nav class="links" aria-label="Enlaces de Kairos">
     <!-- WhatsApp de Jose: +34 641 19 60 65. El texto tras ?text= es el mensaje que aparece ya escrito. -->
-    <a class="link primary" href="https://wa.me/34641196065?text=Hola%2C%20quer%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20Kairo%27s" target="_blank" rel="noopener">
+    <a class="link primary" href="https://wa.me/34641196065?text=Hola%2C%20quer%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20Kairos" target="_blank" rel="noopener">
       <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1.1-4A8 8 0 1 1 20 12z"/><path d="M9 9.5c.3 1.8 2 3.6 3.8 4.2l1.2-1.1 1.8.8-.3 1.3c-3.4.4-7-3.1-6.8-6.5L10 8l.8 1.8z"/></svg></span>
       <span class="txt"><b>Escríbenos por WhatsApp</b><small>Te respondemos nosotros, Jose y Alicia</small></span>
       <span class="arrow" aria-hidden="true">→</span>
@@ -154,7 +155,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; }
     </a>
   </div>
 
-  <footer>Kairo's Intelligence Agency · Hecha por nosotros, como las webs de nuestros clientes</footer>
+  <footer>Kairos Intelligence Agency · Desde Pamplona, Navarra</footer>
 </main>
 
 </body>
